@@ -7,6 +7,59 @@ body{
 	background: #f3f4f6;
 	font-family:cursive,sans-serif;
 }
+/*........preloading animation......styles...*/			.outing{
+        												  position: fixed;
+                                                          top: 0;
+                                                          left: 0;
+                                                          width: 100%;
+                                                          display: flex;
+                                                          z-index: 99;
+                                                          justify-content: center;
+                                                          align-items: center;
+                                                          height: 100vh;
+                                                         
+                                                          background-color: black;
+                                                        }
+
+                                                        .outer{
+                                                          height: 300px;
+                                                          width: 300px;
+                                                          background: linear-gradient(135deg,#feed07 0%,#FE6A50 5%,#ED00AA 15%,#2FE3FE 50%,#8900FF 100%);
+                                                          border-radius: 50%;
+                                                          animation: rotate 1s ease infinite;*/
+                                                        }
+                                                        @keyframes rotate{
+                                                          to{
+                                                            transform: rotate(360deg);
+                                                          }
+                                                        }
+                                                        .inner{
+                                                          position:absolute;
+                                                          width: 275px;
+                                                          height: 275px;
+                                                          text-align: center;
+                                                          line-height: 275px;
+                                                          border-radius: 50%;
+                                                          background:black;
+                                                        }
+                                                        .inner span{
+                                                        	height: 100%;
+                                                          font-size: 30px;
+                                                          background: linear-gradient(135deg,#feed07 0%,#FE6A50 5%,#ED00AA 15%,#2FE3FE 50%,#8900FF 100%);
+                                                          -webkit-background-clip:text;
+                                                          -moz-background-clip:text;
+                                                          background-clip:text;
+                                                          color: transparent;
+                                                          font-family: cursive;
+                                                        }
+                                                        .inner span img{
+                                                        	height: 100%;
+                                                        	border-radius: 50%;
+                                                        	background:transparent;
+                                                        	width:100%;
+                                                        	color: transparent;
+                                                        	background-size: contain;
+                                                        }
 .body_toggle{
 	background: black;
 }
@@ -32,7 +85,14 @@ body{
 .animate{
 	color: royalblue;
 }
-
+.animation img{
+	top: 30px;
+	position:relative;
+	margin: 0;
+	width: 40px;
+	height: 30px;
+	background-size: cover;
+}
 .animation span{
  display:inline;
  padding: 0;
@@ -68,18 +128,6 @@ body{
 }
 .animation span:nth-child(7){
   animation-delay: 1.5s;
-}
-.animation span:nth-child(8){
-  animation-delay: 1.75s;
-}
-.animation span:nth-child(9){
-  animation-delay: 2s;
-}
-.animation span:nth-child(10){
-  animation-delay: 2.25s;
-}
-.animation span:nth-child(11){
-  animation-delay: 2.5s;
 }
 @keyframes animate{
   0%,100%{
@@ -262,96 +310,7 @@ body{
   top:1px;
 }
 
-/* The container <div> - needed to position the dropdown content */
- .dropdown {
-  position: relative;
-  display: inline-block;
-}
 
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
- background-color: #3e8e41;
-}
-/*
-.styles{
-	display: none;
-}
-#container{
-	list-style: none;
-}
-.style{
-	display:block;
-	margin:0;
-	padding:0;
-	list-style: none;
-	position: absolute;
-	right:2px;
-	width: 300px;
-	height: 400px;
-	padding: 20px;
-	background-color: lightblue;
-	border-radius: 10%;
-}
-.style li{
-	width: 200px;
-	height:40px;
-	border-radius: 20%;
-	margin: 20px;
-	background-color: black;
-	opacity:0.7;
-	line-height: 40px;
-}
-.style li a{
-	text-decoration: none;
-	color: white;
-	display: block;
-}
-.style li a:hover{
-	background-color: green;
-    width:200px;
-    height: 40px;
-    transition: 1s ease-in-out; 
-}
-.style li ol li{
-	display: block;
-}
-.style li:hover ol li{
- margin: 0;
- background-color:salmon;
- transition: 1s ease-in;
-
-}
-*/
-/*#asides {
-	display:none;
-}
-*/
 .asidess #asides{
 	transition: 1s ease-in-out;
 	position:absolute;
@@ -446,10 +405,64 @@ body{
 }
 .all{
 	top:70px;
-	position: relative; 
+	position: relative;
 	width:100%;
 	height:200px;
-	background-color:transparent;
+	background-color:black;
+}
+.all video{
+	width: 100%;
+	height: 100%;
+	opacity: 0.1;
+	z-index: 0;
+	object-fit: cover;
+	pointer-events: none;
+}
+header{
+	width: 100%;
+	
+}
+header h3{
+	z-index: 1;
+	opacity: 1;
+	text-align: center;
+	color: white;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	font-weight: bold;
+	margin: 0 auto;
+	position: absolute;
+	top:60px;
+}
+header button{
+	z-index: 1;
+	opacity: 1;
+	text-align: center;
+	color: white;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	outline: none;
+	width: 150px;
+	height: 40px;
+	border-radius: 30px;
+	background:transparent;
+	border:2px solid red;
+	font-weight: bold;
+	margin: 0 auto;
+	position: absolute;
+	top:130px;	
+}
+header button:hover{
+	background-color: orange;
+}
+header a{
+	text-decoration: none;
+	color: white;
+}
+header a:hover{
+	text-decoration: none;
 }
 .topfour, .service-paragraph{
     position: relative;
@@ -552,7 +565,7 @@ body{
 .swipe1 .swiper-slide{
 	text-align: center;
 	font-size: 18px;
-	background: white;
+	background: transparent;
 
 	/*....... center slide vertically.....*/
 	display: -webkit-box;
@@ -651,7 +664,7 @@ h2{
 .fixed_chat img{
 	width: 60px;
 	height: 60px;
-	top: 550px;
+	top: 500px;
 	z-index: 2;
 	position: fixed;
 	border-radius: 50%;
@@ -675,43 +688,65 @@ h2{
 	margin: 20px 10px 300px 10px;
 
 }
-.box img{
+.box .box-image, .box .image-hover{
 	width: 280px;
 	height: 280px;
+}
+.box-image img{
+	width: 100%;
 }
 .body_toggle .box{
 	box-shadow:none;
 }
-.box:hover{
-	transition: 1s ease-in-out;
-	background-color:gray;
-}
-.front-image,.back-image{
+
+/*.front-image,.image-hover{
 	overflow: hidden;
 		transition: 1s ease;
 	object-fit:cover;
 	cursor: pointer;
 	backface-visibility:hidden;
 	transition: transform 1s ease;
+}*/
+.box .box-image{
+	transition: 0.4s ease-all;
 }
-.back-image{
+.image-hover{
 	position: relative;
+	top: -500px;
+	text-align: center;
+	opacity: 0;
+	visibility: hidden;
+	background: rgba(252,48,30,.95);
+	transition: 0.6s ease-in;
+}
+.box:hover .image-hover{
+	visibility: visible;
+	opacity: 1;
 	top: -280px;
+	background: rgba(252,48,30,.95);
+	transition: 0.6s ease-in;
+}
+.image-hover:active .front-image{
 	backface-visibility: hidden;
-	transition: 1s ease;
 }
-.back-image:hover{
-
-	transition: 1s ease;
-	transform: rotateY(180deg);
-}
-.front-image:hover{
-	transition: 1s ease;
-	transform: rotateY(0deg);
-}
-.developing{
+.image-hover button{
+	text-align: center;
 	position: relative;
-	top: -280px;	
+	background:transparent;
+	border-radius: 30px;
+	color:white;
+	outline: none;
+	height: 40px;
+	width: 100px;
+	border-color: white;
+	top: 120px;
+}
+.image-hover button:hover{
+	background-color: red;
+}
+.image-hover a{
+	text-decoration: none;
+	color: white;
 }
 .box p{
 	position: relative;
@@ -725,14 +760,14 @@ h2{
 .body_toggle .box p{
 	box-shadow: 0px 0px 8px 2px #444444;	
 }
-.webdev{
+.box figcaption{
 	position: relative;
 	bottom: -310px;
 	left:45px;
 	color: white;
 	font-weight: bolder;
 }
-.body_toggle .webdev{
+.body_toggle .box figcaption{
 	text-shadow: none;
 }
 .readweb{
@@ -1077,7 +1112,7 @@ background-color: black;
 		}
 		.swipe2 .swiper-slide .image img{
 			width: 100%;
-			height: 300px;
+			height: 250px;
 		}
 		.swipe2 .swiper-slide .details{
 			box-sizing: border-box;
@@ -1109,6 +1144,19 @@ background-color: black;
 
 /* media query section */
 @media screen and (max-width: 800px){
+	/*.....preloading styles....*/
+    .outer{
+    	width: 200px;
+    	height: 200px;
+    	}
+    .inner{
+    	width: 175px;
+    	height: 175px;
+    	line-height: 175px;
+    }
+    .inner span{
+    	font-size: 30px;
+    }
 	.box{
 		width:90%;
 		text-align: center;
@@ -1126,7 +1174,7 @@ background-color: black;
 	.box img{
 		width: 100%; 
 	}
-	.webdev{
+	.box figcaption{
 	position: relative;
 	bottom: -310px;
 	left:0;
@@ -1173,7 +1221,7 @@ background-color: black;
 
 .fixed_chat img{	
 
-		top: 500px;
+		top: 450px;
 		right: 10px;
 }
 
@@ -1187,17 +1235,15 @@ background-color: black;
 		top: 55px;
 		font-weight:bold;
 	}
-	.topone h3{
-		position: relative;
-		top:27px;
-		left: 0;
-		font-family: sans-serif;
-		width: 140px;
-		display: none;
-		font-size: 10px;
-		font-weight: lighter;
-	}
 	
+	header h3{
+		font-size: 16px;
+	}
+	header button{
+		width: 110px;
+		height: 35px;
+		top: 110px;
+	}
 	.link-top{
 		display: none;	
 		transition: 1s ease-in;
@@ -1383,7 +1429,7 @@ display: none;
 .swipe1 .swiper-slide img{
 	width:200px;
 	height: 200px;
-	margin: 0;
+	margin-left:5px;
 	text-align: left;
 	align-items: left;
 	align-content: left;
@@ -1392,10 +1438,11 @@ display: none;
 }
 .swipe1 .swiper-slide p{
 	font-size: 14px;
-	width:140px;
-	background-size: cover;
+	width:auto;
+	background-size: contain;
 	right: 0;
-	margin-left: 8px;
+	overflow-x: hidden;
+	margin-left: 5px;
 	word-spacing: 1px;
 
 }
@@ -1431,7 +1478,7 @@ display: none;
 	left: 0;
 }
 .swipe2{
-	height: 550px;
+	height: 480px;
 
 }
 .swipe2 .swiper-slide .details{
@@ -1442,8 +1489,17 @@ display: none;
 .swipe2 .swiper-slide .details p{
 	font-size: 15px;
 }
+.swipe2 .swiper-slide .image{
+	width: 100%;
+	clip-path: circle( 100px at center);
+	background-size: contain;
+	-webkit-clip-path: circle( 80px at center);
+	height: 180px;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
 .swipe2 .swiper-slide .image img{
-	height: 230px;
+	height: 180px;
 	width: 100%;
 
 }
