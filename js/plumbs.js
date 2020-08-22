@@ -13,12 +13,10 @@ readingmode=()=>{
 }
 //.....scrolling effects section .......
 window.addEventListener('scroll', scroll_counter=()=> {
-	const count_project = document.querySelector('.ggg');
 	const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-	const scroll = window.scrollY;
+	let scroll = window.scrollY;
 	//console.log(scroll);
-	if (Math.floor(scroll) >= 1000) {
-				
+	if (Math.floor(scroll) >= 1000) {				
 			let projectdel = 10;
 		let project_del = document.getElementById('project_del');
 		projectDel=()=>{
@@ -26,12 +24,15 @@ window.addEventListener('scroll', scroll_counter=()=> {
 			if (projectdel < 1500) {
 				projectdel = projectdel +10;
 			}
+			else{
+				clearInterval(newdel);
+			}
 			
 			
 		
 		};
 
-		setInterval(projectDel,100);
+		var newdel = setInterval(projectDel,100);
 		//next counter begins
 		let projectsat = 10;
 		let project_sat = document.getElementById('project_sat');
@@ -42,12 +43,15 @@ window.addEventListener('scroll', scroll_counter=()=> {
 				projectsat = projectsat +10;
 
 			}
+			else{
+				clearInterval(newsat);
+			}
 			
 			
 		
 		}
 
-		setInterval(projectSat,100);
+		var newsat = setInterval(projectSat,100);
 		//setTimeout(projectSat,100);
 		//next counter begins
 	let projectcre = 0;
@@ -58,12 +62,15 @@ window.addEventListener('scroll', scroll_counter=()=> {
 			if (projectcre < 96) {
 				projectcre++;
 			}
+			else{
+				clearInterval(newcrel);
+			}
 			
 			
 		
 		}
 
-		setInterval(projectCre,190);
+		var newcrel = setInterval(projectCre,190);
 		//setTimeout(projectCre,100);
 		//next counting...........
 
@@ -75,20 +82,24 @@ window.addEventListener('scroll', scroll_counter=()=> {
 			if (projectrel < 95) {
 				projectrel++;
 			}
+			else{
+				clearInterval(newrel);
+			}
 			
 			
 		
 		}
 
-		 setInterval(projectRel,190);
+		var newrel =  setInterval(projectRel,190);
 		 
 		
 	
-		
+		//try giving it different event listener and d last edition
 	}
-		window.removeEventListener('scroll', scroll_counter);
+		
 }
 );
+
 //........scrolling top effects......b
 	window.addEventListener('scroll',scroll_top=()=>{
 		const scroll_top = window.scrollY;
@@ -141,6 +152,15 @@ document.querySelector("body").classList.toggle('body_toggle');
 //document.querySelector("#toggle_p").classList.toggle('toggle_p');
 	
 };
+/*......preloading animation */
+ window.addEventListener('DOMContentLoaded', function() {
+ const loader = document.querySelector('.outing');
+ loader.className = 'hidden';
+ loader.style.display = "none";
+ loader.style.visibility ="hidden";
+  
+  });		
+
   //to check if there is overlay of element in the console
   var docwidth = document.documentElement.offsetWidth;
   [].forEach.call(
